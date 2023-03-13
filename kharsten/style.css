@@ -152,12 +152,37 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     animation: fade 1.5s;
   }
+  
+  @media only screen and (max-width: 768px) {
+    .slide {
+      height: 70vh;
+    }
+  }
+  
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .slide {
+      height: 80vh;
+    }
+  }
+  
+  @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    .slide {
+      height: 90vh;
+    }
+  }
+  
+  @media only screen and (min-width: 1441px) {
+    .slide {
+      height: 100vh;
+    }
+  }
+  
   
   @keyframes fade {
     from { opacity: 0; }
