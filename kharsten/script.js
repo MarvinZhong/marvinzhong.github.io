@@ -11,6 +11,9 @@ document.querySelector(".name").textContent = `${name.toUpperCase()}`;
 const button = document.querySelector(".button");
 button.addEventListener("click", function() {
   document.querySelector(".card").style.display = "none";
+  var audio = new Audio("images/HBD.mp3");
+  audio.loop = true;
+  audio.play();
 });
 
 // Set up the slideshow
