@@ -19,7 +19,7 @@ let currentSlide = 0;
 
 function showSlide(n) {
   // Hide all slides
-  for (let i = 0; i < slides.length; i++) {
+  for (let i = 0; i <slides.length; i++) {
     slides[i].style.display = "none";
   }
   // Show the specified slide
@@ -37,7 +37,7 @@ setInterval(function() {
   currentSlide = (currentSlide + 1) % slides.length;
   // Show the next slide
   showSlide(currentSlide);
-}, 3000);
+}, 2000);
 
 // Set up the countdown timer
 const countdown = document.querySelector(".countdown");
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Check if the attendees list and its first child exist before trying to scroll
   if (attendeesList && attendeesList.firstElementChild) {
     let currentPosition = 0;
-    const step = attendeesList.firstElementChild.clientWidth;
+    const step = attendeesList.firstElementChild.clientWidth*100;
     const maxPosition = attendeesList.scrollWidth - attendeesList.clientWidth;
 
     setInterval(() => {
@@ -96,9 +96,17 @@ document.addEventListener("DOMContentLoaded", () => {
         currentPosition = 0;
       }
       attendeesList.scrollLeft = currentPosition;
-    }, 2000);
+    }, 5000);
   }
 });
 
+function showImage(src) {
+  var img = document.querySelector('#fullscreen img');
+  img.src = src;
+  document.querySelector('#fullscreen').classList.remove('hidden');
+}
 
+function hideImage() {
+  document.querySelector('#fullscreen').classList.add('hidden');
+}
 
